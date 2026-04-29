@@ -8,7 +8,7 @@ public class Coordenadas
         Console.WriteLine("Informe as coordenadas X e Y, respectivamente, e a direção que o robô está olhando (N,S,L,O)");
         string? inputInicial = Console.ReadLine();
 
-        string[] dados = inputInicial.Split(' ');
+        string[] dados = inputInicial!.Split(' ');
 
         int coord_x = Convert.ToInt32(dados[0]);
         int coord_y = Convert.ToInt32(dados[1]);
