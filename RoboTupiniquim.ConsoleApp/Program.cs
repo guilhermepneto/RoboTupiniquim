@@ -15,18 +15,15 @@ while (true)
     string direcao = dados[2].ToUpper();
 
     Console.WriteLine("A posição inicial do robô é: " + coord_x + " " + coord_y + " " + direcao);
-    Console.WriteLine("Pressione ENTER para continuar");
-    Console.ReadLine();
 
     //2ª parte - Input de sequencia de comandos
 
+    Console.WriteLine("");
     Console.WriteLine("Informe a sequência de comandos que o robô irá percorrer no grid (E,D ou M)");
-    string sequenciaComandos = Console.ReadLine();
+    string sequenciaComandos = Console.ReadLine().ToUpper();
+    Console.WriteLine("");
 
     char[] instrucoes = sequenciaComandos.ToCharArray();
-
-    Console.WriteLine("Pressione ENTER para continuar");
-    Console.ReadLine();
 
     //3ª parte - Execução da sequência de comandos
 
@@ -50,7 +47,7 @@ while (true)
                         break;
 
                     case "O":
-                        coord_x ==;
+                        coord_x--;
                         break;
                 }
                 break;
@@ -98,8 +95,14 @@ while (true)
                 break;
         }
     }
-    Console.WriteLine("A posição final do robô é: " + coord_x + " " + coord_y + " " + direcao);
+    Console.WriteLine("Movendo robô, aguarde enquanto concluímos a ação...");
+    Console.WriteLine("");
+    Thread.Sleep(2000);
+    Console.WriteLine("-----------------------------------------------------");
+    Console.WriteLine("Movimento concluído. A posição final do robô é: " + coord_x + " " + coord_y + " " + direcao);
+    Console.WriteLine("-----------------------------------------------------");
 
+    Console.WriteLine("");
     Console.WriteLine("Deseja executar o programa novamente? (s/N)");
     string opcaocontinuar = Console.ReadLine().ToUpper();
 
